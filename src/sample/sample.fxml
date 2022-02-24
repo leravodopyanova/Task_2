@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <FlowPane prefHeight="487.0" prefWidth="955.0" style="-fx-background-color: beige;">
+            <children>
+            <HBox prefHeight="107.0" prefWidth="956.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-style: dotted;">
+               <children>
+                  <HBox prefHeight="106.0" prefWidth="610.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="22.0" prefWidth="135.0" style="-fx-background-color: beige; -fx-border-color: black;" text="Кол-во сторон">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="30.0" top="45.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="numOfSides" alignment="CENTER" prefHeight="26.0" prefWidth="68.0">
+                           <HBox.margin>
+                              <Insets left="15.0" top="40.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+                  <VBox prefHeight="106.0" prefWidth="600.0">
+                     <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="24.0" prefWidth="150.0" style="-fx-background-color: #B0C4DE;" text="Фигура" textAlignment="CENTER">
+                                  <font>
+                                      <Font size="18.0" />
+                                  </font>
+                           <VBox.margin>
+                              <Insets left="80.0" top="15.0" />
+                           </VBox.margin>
+                              </Label>
+                     </children></VBox>
+                  <HBox prefHeight="106.0" prefWidth="610.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="22.0" prefWidth="135.0" style="-fx-background-color: beige; -fx-border-color: black;" text="Логический знак">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="45.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MenuButton fx:id="menuLogic" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="108.0" text="выбрать" textAlignment="CENTER">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                            <MenuItem mnemonicParsing="false" text="Action 2" />
+                          </items>
+                           <HBox.margin>
+                              <Insets left="15.0" top="40.0" />
+                           </HBox.margin>
+                        </MenuButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+                <Canvas fx:id="mainCanvas" height="488.0" onMouseClicked="#canvasMouseClick" width="658.0" />
+                <VBox prefHeight="487.0" prefWidth="295.0" style="-fx-background-color: white; -fx-border-style: dotted;">
+                    <children>
+                        <HBox prefHeight="62.0" prefWidth="294.0" />
+                        <Label alignment="CENTER" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: #B0C4DE;" text="Размер">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets left="70.0" top="20.0" />
+                            </VBox.margin></Label>
+                        <HBox prefHeight="52.0" prefWidth="294.0">
+                            <children>
+                                <Label alignment="CENTER" prefHeight="22.0" prefWidth="53.0" style="-fx-background-color: beige; -fx-border-color: black;" text="Высота">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="20.0" top="15.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="heightTextField">
+                                    <HBox.margin>
+                                        <Insets left="30.0" top="12.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="69.0" prefWidth="294.0">
+                            <children>
+                                <Label alignment="CENTER" style="-fx-background-color: beige; -fx-border-color: black;" text="Ширина">
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="widthTextField" onMouseClicked="#wMouseClick">
+                                    <HBox.margin>
+                                        <Insets left="29.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children></HBox>
+                        <Label alignment="CENTER" layoutX="81.0" layoutY="31.0" prefHeight="24.0" prefWidth="154.0" style="-fx-background-color: #B0C4DE;" text="Цвет" textAlignment="CENTER">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets left="70.0" />
+                            </VBox.margin>
+                        </Label>
+                        <ColorPicker fx:id="colorPicker" prefHeight="26.0" prefWidth="256.0">
+                            <VBox.margin>
+                                <Insets left="20.0" top="10.0" />
+                            </VBox.margin></ColorPicker>
+                  <Label fx:id="figureName" alignment="CENTER" contentDisplay="CENTER" layoutX="81.0" layoutY="93.0" prefHeight="27.0" prefWidth="205.0" style="-fx-background-color: lightgreen;" text="Название" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="50.0" top="80.0" />
+                     </VBox.margin>
+                  </Label>
+                    </children></VBox>
+            </children>
+        </FlowPane>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
